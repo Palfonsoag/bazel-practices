@@ -1,0 +1,21 @@
+bazel_dep(name = "rules_python", version = "1.1.0")
+bazel_dep(name = "rules_uv", version = "0.55.0")
+
+python = use_extension("@rules_python//python/extensions:python.bzl", "python")
+python.toolchain(
+    python_version = "3.11.9",
+)
+use_repo(
+    python,
+    python_3_11 = "python_3_11_9",
+)
+
+
+pip = use_extension("@rules_python//python/extensions:pip.bzl", "pip")
+pip.parse(
+    download_only = True,
+    hub_name = "pypi",
+    python_version = "3.11.9",
+    requirements_lock = "//:requirements.txt",
+)
+use_repo(pip, "pypi")

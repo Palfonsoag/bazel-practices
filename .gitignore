@@ -1,1 +1,4 @@
-/firstPractice/bazel-bin/*
+firstPractice/bazel-bin
+firstPractice/bazel-out
+firstPractice/bazel-firstPractice
+firstPractice/bazel-testlogs
