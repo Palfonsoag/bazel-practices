@@ -10,8 +10,8 @@ jobs:
   ci:
     runs-on: ubuntu-latest
     steps:
+      - working-directory: ./firstPractice
       - uses: actions/checkout@v2
       - uses: bazelbuild/setup-bazelisk@v2
-      - run: cd firstPractice/
       - run: bazel build //...
       - run: bazel test //...
