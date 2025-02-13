@@ -21,3 +21,14 @@ pip.parse(
     requirements_lock = "//:requirements.txt",
 )
 use_repo(pip, "pypi")
+
+go_sdk = use_extension("@rules_go//go:extensions.bzl", "go_sdk")
+
+# Download an SDK for the host OS & architecture as well as common remote execution platforms.
+go_sdk.download(version = "1.24.0")
+
+go_deps = use_extension("@gazelle//:extensions.bzl", "go_deps")
+
+
+# All *direct* Go dependencies of the module have to be listed explicitly.
+use_repo(go_deps)
