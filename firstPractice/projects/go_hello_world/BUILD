@@ -1,4 +1,4 @@
-load("@rules_go//go:def.bzl", "go_binary", "go_library", "go_test")
+load("@rules_go//go:def.bzl", "go_library", "go_test")
 
 # gazelle:prefix github.com/example/project
 # gazelle:build_file_name BUILD,BUILD.bazel
