@@ -2,3 +2,6 @@ firstPractice/bazel-bin
 firstPractice/bazel-out
 firstPractice/bazel-firstPractice
 firstPractice/bazel-testlogs
+angular-demo/agular-bazel-build-demo/bazel-agular-bazel-build-demo
+angular-demo/agular-bazel-build-demo/bazel-bin
+angular-demo/agular-bazel-build-demo/bazel-testlogs

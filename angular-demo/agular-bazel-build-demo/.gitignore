@@ -5,6 +5,9 @@
 /tmp
 /out-tsc
 /bazel-out
+/bazel-testlogs
+/bazel-bin
+/bazel-agular-bazel-build-demo
 
 # Node
 /node_modules
