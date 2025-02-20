@@ -1,0 +1,32 @@
+load("@aspect_rules_ts//ts:defs.bzl", "ts_config")
+
+
+# The root repo tsconfig
+ts_config(
+    name = "tsconfig",
+    src = "tsconfig.json",
+    visibility = ["//visibility:public"],
+    deps = ["tsconfig.base.json"],
+)
+
+
+
+
+load("@aspect_bazel_lib//lib:directory_path.bzl", "directory_path")
+load("@aspect_bazel_lib//lib:copy_file.bzl", "copy_file")
+load("@npm//:defs.bzl", "npm_link_all_packages")
+load("//:defs.bzl", "ng_application")
+
+package(default_visibility = ["//visibility:public"])
+
+npm_link_all_packages(name = "node_modules")
+
+
+# The Angular demo application
+ng_application(
+    name = "demo",
+)
+
+# An asset from within an npm package
+
+
